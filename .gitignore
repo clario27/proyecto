@@ -1,0 +1,11 @@
+# Archivos del sistema (Basura que crea Windows/Linux)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuración de VS Code (opcional, pero limpia el repo)
+.vscode/
+
+# Archivos temporales de bases de datos
+*.log
+*.tmp
