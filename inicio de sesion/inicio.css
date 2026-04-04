@@ -1,10 +1,12 @@
 * {
-background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),url(pink-ribbon-black-stethoscope-plaster.jpg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url(pink-ribbon-black-stethoscope-plaster.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* La imagen se queda quieta al hacer scroll */
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,22 +25,52 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 
   border: none !important;
   border-radius: 20px !important;
   height: 70px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
-body {
-  background-color: rgba(0, 0, 0, 0.05);
+.card,
+.card *,
+.card-body {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #ffffff !important;
 }
-/*.card-inicio {
-    background-color: beige;
-    border-radius: 20px;         /* Esto es lo que le da la forma redondeada 
-    padding: 40px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* La sombra suave que tiene 
-}*/ 
 
-/* IMPORTANTE: Como el fondo es transparente, los textos deben resaltar */
-/*.card-body h3,
-.form-label .form-control {
-  color: #2c3e50 !important; 
-  font-weight: 500;
-}*/
+.card {
+  border-radius: 10px;
+  border: none !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+.form-control,
+.btn {
+  border: 1px solid #ced4da !important;
+}
+
+.form-check-input:checked {
+  background-color: #3498db !important;
+  border-color: #3498db !important;
+  filter: none !important;
+}
+
+.form-check-input:checked[type="checkbox"] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e") !important;
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1 !important;
+}
+
+.btn-outline-dark:hover {
+  background-color: #3498db !important;
+  color: #ffffff !important;
+  border-color: #3498db !important;
+  font-weight: bold !important;
+}
+
+.btn-outline-dark {
+  transition: all 0.3s ease;
+}
