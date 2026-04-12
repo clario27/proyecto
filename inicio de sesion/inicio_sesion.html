@@ -4,65 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="inicio.css">
-    <title>La salle</title>
+    <link rel="stylesheet" href="script.js">
+    
+    <title>La Salle</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html"
-                style="border-bottom: 3px solid #3498db; font-size: 25px !important; font-weight: bold !important;">Asociación
-                Cooperativa La Salle</a>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a class="brand-text">Asociación Cooperativa La Salle</a>
+            <div class="options-accordion">
+                <button class="accordion-btn" id="btnOpciones">
+                    Opciones <ion-icon name="chevron-down-outline" class="accordion-icon"></ion-icon>
+                </button>
+                <div class="panel" id="panelOpciones">
+                    <a href="/servicios/servicios.html">
+                        <ion-icon name="settings-outline"></ion-icon>Servicios</a>
+                    <a href="../index.html"><ion-icon name="exit-outline"></ion-icon>Volver</a>
+                </div>
+            </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="container-form">
+            <form class="sing-in">
+                <h1>Iniciar Sesion</h1>
+                <span>Use su correo y contraseña</span>
+                <div class="container-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" required placeholder="Correo Electronico">
+                </div>
+                <div class="container-input">
+                    <ion-icon name="lock-closed"></ion-icon>
+                    <input type="password" required placeholder="Contraseña" id="password">
+                </div>
+                <div class="check">
+                    <input type="checkbox" id="check1">
+                    <label for="check1">Mirar contraseña</label>
+                </div>
+                <button class="button">Iniciar Sesion</button>
+            </form>
+        </div>
 
-    <div class="container d-flex justify-content-center align-items-center v-100 login" style="min-height: 100vh;">
-
-        <div class="card p-4 shadow-sm" style="width: 25rem; background-color: white !important;">
-            <div class="card-body" style="background-color: white !important; opacity: 1 !important;">
-                <h3 class="text-center mb-4" style="font-weight: bold !important;">Iniciar Sesión</h3>
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label"
-                            style="font-weight: bold !important;">Usuario</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Ingrese su usuario" style="border-color: #3498db !important;">
+        <div class="container-form">
+            <form class="sing-up">
+                <h1>Registrarse</h1>
+                <span>Use su correo electrónico para registrarse</span>
+                <div class="container-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" required placeholder="Nombre y apellido">
+                </div>
+                <div class="container-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" required placeholder="Correo Electronico">
+                </div>
+                <div class="container-input role-selector-container">
+                    <div id="role-selector-button" class="role-selector-btn">
+                        <div class="role-info">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                            <span id="selected-role-text">Seleccionar rol</span>
+                        </div>
+                        <span class="chevron-icon">▼</span>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label"
-                            style="font-weight: bold !important;">Contraseña</label>
-                        <input type="password" class="form-control" id="Password" placeholder="Ingrese su contraseña"
-                            style="border-color: #3498db !important;">
+                    <div id="role-dropdown-menu" class="role-dropdown-content">
+                        <a class="role-option" data-role="doctor">Doctor</a>
+                        <a class="role-option" data-role="secretaria">Secretaria</a>
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="Check1"
-                            style="border-color: #3498db !important;">
-                        <label class="form-check-label" for="Check1">Mirar contraseña</label>
-                    </div>
-                    <script>
-                        const checkbox = document.getElementById('Check1');
-                        const passInput = document.getElementById('Password');
-                        checkbox.addEventListener('change', function () {
-                            if (this.checked) {
-                                passInput.type = 'text';
-                            } else {
-                                passInput.type = 'password';
-                            }
-                        });
-                    </script>
-
-                    <div class="d-grid gap-2">
-                        <a class="btn btn-outline-dark"
-                            style="border-color: #3498db !important; font-weight: bold !important;"
-                            href="../primera vista/primera_vista.html">Iniciar sesion</a>
-                    </div>
-                </form>
+                    <input type="hidden" name="user_role" id="user-role-input" value="">
+                </div>
+                <div class="container-input">
+                    <ion-icon name="lock-open-outline"></ion-icon>
+                    <input type="password" required placeholder="Contraseña" id="contraseña">
+                </div>
+                <div class="container-input">
+                    <ion-icon name="lock-closed"></ion-icon>
+                    <input type="password" required placeholder="verifique su contraseña" id="verificar-contraseña">
+                </div>
+                <div class="check">
+                    <input type="checkbox" id="check2">
+                    <label for="check2">Mirar contraseña</label>
+                </div>
+                <button class="button">Registrarse</button>
+            </form>
+        </div>
+        <div class="container-welcome">
+            <div class="welcome-sign-up welcome">
+                <h1>¡Bienvenido!</h1>
+                <span>Ingrese sus credenciales personales para iniciar sesión</span>
+                <button class="button" id="btn-sign-up">Registrarse</button>
+            </div>
+            <div class="welcome-sign-in welcome">
+                <h1>¡Hola!</h1>
+                <a>Registrese con sus datos personales para iniciar sesión</a>
+                <button class="button" id="btn-sign-in">Iniciar Sesión</button>
             </div>
         </div>
     </div>
+    <script src="validaciones.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "></script>
 </body>
-<script src="Boostrap/js/bootstrap.bundle.min.js"></script>
 
 </html>

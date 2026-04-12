@@ -10,28 +10,6 @@ body {
   background-color: ffffff;
 }
 
-.navbar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  z-index: 2000 !important;
-
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px);
-  border: none !important;
-  height: 70px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.navbar a {
-  font-size: 20px !important;
-}
-
-button {
-  font-size: 20px !important;
-}
-
 #flush-collapseOne {
   position: absolute;
   right: 15px;
@@ -103,4 +81,91 @@ h1 {
   font-size: 1.5rem;
   font-weight: bold;
   color: #3498db;
+}
+
+:root {
+  --azul-la-salle: #3498db;
+  --azul-oscuro: #2980b9;
+  --azul-claro: #f0f9ff;
+  --borde-suave: #c9e3f8;
+}
+
+/* Navbar Estilos*/
+.navbar {
+  width: 100% !important;
+  max-width: 100% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 !important;
+  background-color: white;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.brand-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #003366;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 3px solid var(--azul-la-salle);
+  padding-bottom: 5px;
+}
+
+.accordion-btn {
+  background: white;
+  border: 1px solid var(--borde-suave);
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.panel {
+  position: absolute;
+  right: 5%;
+  top: 70px;
+  background: white;
+  border: 1px solid var(--borde-suave);
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  width: 180px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.panel.show {
+  display: flex;
+}
+
+.panel a {
+  padding: 12px;
+  text-decoration: none;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panel a:hover {
+  background: var(--azul-claro);
+  color: var(--azul-la-salle);
 }

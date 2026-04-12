@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+    <title>La salle</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"
+                style="border-bottom: 3px solid #3498db; font-size: 25px !important; font-weight: bold !important;">Asociación
+                Cooperativa La Salle</a>
+        </div>
+    </nav>
+    <div class="container d-flex justify-content-center align-items-center v-100 login" style="min-height: 100vh;">
+
+        <div class="card p-4 shadow-sm" style="width: 25rem; background-color: white !important;">
+            <div class="card-body" style="background-color: white !important; opacity: 1 !important;">
+                <h3 class="text-center mb-4" style="font-weight: bold !important;">Registrar</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label" style="font-weight: bold !important;">Nombre
+                            y apellido</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Ingrese su nombre y apellido" style="border-color: #3498db !important;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label"
+                            style="font-weight: bold !important;">Correo electrónico</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Ingrese su correo electrónico" style="border-color: #3498db !important;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label"
+                            style="font-weight: bold !important;">Contraseña</label>
+                        <input type="password" class="form-control" id="Check1"
+                            placeholder="Ingrese su contraseña" style="border-color: #3498db !important;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label"
+                            style="font-weight: bold !important;">Verifique su contraseña</label>
+                        <input type="password" class="form-control" id="Check2"
+                            placeholder="Verifique la contraseña" style="border-color: #3498db !important;">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="Password"
+                            style="border-color: #3498db !important;">
+                        <label class="form-check-label" for="Password">Mirar contraseña</label>
+                    </div>
+                    <script>
+                        const checkbox = document.getElementById('Password');
+                        const passInput1 = document.getElementById('Check1');
+                        const passInput2 = document.getElementById('Check2');
+                        checkbox.addEventListener('change', function () {
+                            if (this.checked) {
+                                passInput1.type = 'text';
+                                passInput2.type = 'text';
+                            } else {
+                                passInput1.type = 'password';
+                                passInput2.type = 'password';
+                            }
+                        });
+                    </script>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-outline-dark"
+                            style="border-color: #3498db !important; font-weight: bold !important;"
+                            href="../primera vista/primera_vista.html">Registrar</a>
+                    </div>
+        </div>
+
+</body>

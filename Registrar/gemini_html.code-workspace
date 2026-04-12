@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../gemini_html"
+		},
+		{
+			"path": "../../../proyecto"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "proyecto"
+	}
+}
