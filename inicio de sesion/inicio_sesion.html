@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="inicio.css">
     <link rel="stylesheet" href="script.js">
-    
+
     <title>La Salle</title>
 </head>
 
@@ -36,6 +36,20 @@
                     <ion-icon name="mail-outline"></ion-icon>
                     <input type="text" required placeholder="Correo Electronico">
                 </div>
+                <div class="container-input role-selector-container">
+                    <div id="role-selector-button" class="role-selector-btn">
+                        <div class="role-info">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                            <span id="selected-role-text">Seleccionar rol</span>
+                        </div>
+                        <span class="chevron-icon">▼</span>
+                    </div>
+                    <div id="role-dropdown-menu" class="role-dropdown-content">
+                        <a class="role-option" data-role="doctor">Doctor</a>
+                        <a class="role-option" data-role="secretaria">Secretaria</a>
+                    </div>
+                    <input type="hidden" name="user_role" id="user-role-input" value="">
+                </div>
                 <div class="container-input">
                     <ion-icon name="lock-closed"></ion-icon>
                     <input type="password" required placeholder="Contraseña" id="password">
@@ -57,26 +71,59 @@
                     <input type="text" required placeholder="Nombre y apellido">
                 </div>
                 <div class="container-input">
+                    <ion-icon name="card-outline"></ion-icon>
+                    <input type="text" required placeholder="Cedula">
+                </div>
+
+                <div class="container-input">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <input type="text" required placeholder="Telefono">
+                </div>
+
+                <div class="container-input">
                     <ion-icon name="mail-outline"></ion-icon>
                     <input type="text" required placeholder="Correo Electronico">
                 </div>
+                <!-- Selector principal -->
                 <div class="container-input role-selector-container">
-                    <div id="role-selector-button" class="role-selector-btn">
+                    <div class="role-selector-btn">
                         <div class="role-info">
                             <ion-icon name="person-circle-outline"></ion-icon>
                             <span id="selected-role-text">Seleccionar rol</span>
                         </div>
                         <span class="chevron-icon">▼</span>
                     </div>
-                    <div id="role-dropdown-menu" class="role-dropdown-content">
-                        <a class="role-option" data-role="doctor">Doctor</a>
+                    <div class="role-dropdown-content">
                         <a class="role-option" data-role="secretaria">Secretaria</a>
+                        <a class="role-option" data-role="doctor">Doctor</a>
                     </div>
                     <input type="hidden" name="user_role" id="user-role-input" value="">
                 </div>
+
+                <!-- Selector especialidades (OCULTO inicialmente) -->
+                <div class="container-input role-selector-container-specialties" style="display: none;">
+                    <div class="role-selector-btn">
+                        <div class="role-info">
+                            <ion-icon name="medkit-outline"></ion-icon>
+                            <span id="selected-specialty-text">Seleccionar especialidad</span>
+                        </div>
+                        <span class="chevron-icon">▼</span>
+                    </div>
+                    <div class="role-dropdown-content">
+                        <a class="role-option" data-role="oncologia">Oncología</a>
+                        <a class="role-option" data-role="pediatria">Pediatría</a>
+                        <a class="role-option" data-role="medicinaGeneral">Medicina General</a>
+                        <a class="role-option" data-role="optometria">Optometría</a>
+                        <a class="role-option" data-role="traumatologia">Traumatología</a>
+                        <a class="role-option" data-role="medicinaInterna">Medicina Interna</a>
+                        <a class="role-option" data-role="psicologia">Psicología</a>
+                        <a class="role-option" data-role="odontologia">Odontología</a>
+                    </div>
+                    <input type="hidden" name="user_specialty" id="user-specialty-input" value="">
+                </div>
                 <div class="container-input">
                     <ion-icon name="lock-open-outline"></ion-icon>
-                    <input type="password" required placeholder="Contraseña" id="contraseña">
+                    <input type="password" required placeholder="Contraseña" id="verificar-contraseña">
                 </div>
                 <div class="container-input">
                     <ion-icon name="lock-closed"></ion-icon>

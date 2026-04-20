@@ -403,7 +403,7 @@ body {
 .role-selector-container {
   position: relative;
   cursor: pointer;
-  padding: 0 !important; 
+  padding: 0 !important;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -414,15 +414,14 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 12px 15px; 
-  height: 45px; 
+  padding: 12px 15px;
+  height: 45px;
 }
 .role-info {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 
 .role-info img {
   height: 18px;
@@ -431,16 +430,14 @@ body {
 }
 
 #selected-role-text {
-  color: #757575; 
+  color: #757575;
   font-size: 14px;
   font-family: sans-serif;
 }
 
-
 .role-selector-container.selected #selected-role-text {
   color: #333;
 }
-
 
 .chevron-icon {
   color: #a0a0a0;
@@ -479,4 +476,96 @@ body {
 .role-option:hover {
   background-color: #e3f2fd;
   color: #3498db;
+}
+
+/* 🔧 CSS para REGISTRO (que faltaba) */
+.role-selector-container-register {
+  position: relative;
+  cursor: pointer;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.role-selector-container-register .role-selector-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 15px;
+  height: 45px;
+}
+
+.role-selector-container-register .role-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#selected-role-text-register {
+  color: #757575;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.role-selector-container-register.selected #selected-role-text-register {
+  color: #333;
+}
+
+.role-selector-container-register.open .role-dropdown-content {
+  display: block;
+}
+
+.role-selector-container-register .role-option-register {
+  padding: 12px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.role-selector-container-register .role-option-register:hover {
+  background-color: #e3f2fd;
+  color: #3498db;
+}
+
+.role-selector-container-specialties {
+  margin-top: 10px;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
+
+.role-selector-container-specialties .role-selector-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  cursor: pointer;
+  height: 45px;
+}
+
+#selected-specialty-text {
+  color: #757575;
+  font-size: 14px;
+}
+
+.role-selector-container-specialties.open .role-dropdown-content {
+  display: block;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.role-selector-container-specialties .role-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border: 1px solid #ddd;
 }

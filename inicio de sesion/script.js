@@ -48,47 +48,49 @@ window.addEventListener("click", function (e) {
     panelOpciones.classList.remove("show");
   }
 });
+document.addEventListener("DOMContentLoaded", function() {
+    // Buscar TODOS los contenedores
+    const allSelectors = document.querySelectorAll(".role-selector-container, .role-selector-container-register");
 
-/* menu de roles */
+    allSelectors.forEach(roleSelector => {
+        // ✅ SELECCIÓN CORREGIDA - Buscar dentro de ESTE contenedor específico
+        const selectedText = roleSelector.querySelector("#selected-role-text-register, #selected-role-text");
+        const hiddenInput = roleSelector.querySelector("#user-role-input-register, #user-role-input");
+        const options = roleSelector.querySelectorAll(".role-option-register, .role-option");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const roleSelector = document.querySelector(".role-selector-container");
-  const selectedText = document.getElementById("selected-role-text");
-  const hiddenInput = document.getElementById("user-role-input");
-  const options = document.querySelectorAll(".role-option");
+        // 1. Abrir/cerrar menú
+        roleSelector.addEventListener("click", function(e) {
+            if (e.target.closest(".role-option-register, .role-option")) return;
+            this.classList.toggle("open");
+        });
 
-  // 1. Alternar la apertura del menú al hacer clic en el selector
-  roleSelector.addEventListener("click", function (e) {
-    // Prevenir que el clic en una opción también cierre el menú prematuramente
-    if (e.target.closest(".role-option")) return;
-    this.classList.toggle("open");
-  });
+        // 2. Seleccionar opción
+        options.forEach(option => {
+            option.addEventListener("click", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
 
-  // 2. Manejar la selección de una opción
-  options.forEach((option) => {
-    option.addEventListener("click", function (e) {
-      e.preventDefault(); // Evitar que el enlace navegue
+                const selectedRoleName = this.textContent.trim();
+                const selectedRoleValue = this.getAttribute("data-role-register") || this.getAttribute("data-role");
 
-      const selectedRoleName = this.textContent;
-      const selectedRoleValue = this.getAttribute("data-role");
-
-      // Actualizar el texto visible
-      selectedText.textContent = selectedRoleName;
-      // Actualizar el input oculto para enviarlo con el formulario
-      hiddenInput.value = selectedRoleValue;
-
-      // Añadir una clase al contenedor para indicar que hay una selección
-      roleSelector.classList.add("selected");
-
-      // Cerrar el menú
-      roleSelector.classList.remove("open");
+                selectedText.textContent = selectedRoleName;
+                hiddenInput.value = selectedRoleValue;
+                
+                roleSelector.classList.add("selected");
+                roleSelector.classList.remove("open");
+            });
+        });
     });
-  });
 
-  // 3. Cerrar el menú si se hace clic fuera de él
-  document.addEventListener("click", function (e) {
-    if (!roleSelector.contains(e.target)) {
-      roleSelector.classList.remove("open");
-    }
-  });
+    // 3. Cerrar al clic fuera
+    document.addEventListener("click", function(e) {
+        const allSelectors = document.querySelectorAll(".role-selector-container, .role-selector-container-register");
+        allSelectors.forEach(selector => {
+            if (!selector.contains(e.target)) {
+                selector.classList.remove("open");
+            }
+        });
+    });
+
+    
 });
