@@ -16,14 +16,15 @@ body {
 }
 
 .container {
-  width: 800px;
-  height: 500px;
+  width: 1000px;
+  height: 1000px;
   display: flex;
   position: relative;
   background-color: white;
   border-radius: 15px;
   overflow: hidden;
-  margin-top: 90px;
+  margin-top: 100px;
+  margin-bottom: 50px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 

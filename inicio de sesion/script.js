@@ -48,49 +48,57 @@ window.addEventListener("click", function (e) {
     panelOpciones.classList.remove("show");
   }
 });
-document.addEventListener("DOMContentLoaded", function() {
-    // Buscar TODOS los contenedores
-    const allSelectors = document.querySelectorAll(".role-selector-container, .role-selector-container-register");
+document.addEventListener("DOMContentLoaded", function () {
+  const allSelectors = document.querySelectorAll(
+    ".role-selector-container, .role-selector-container-register",
+  );
 
-    allSelectors.forEach(roleSelector => {
-        // ✅ SELECCIÓN CORREGIDA - Buscar dentro de ESTE contenedor específico
-        const selectedText = roleSelector.querySelector("#selected-role-text-register, #selected-role-text");
-        const hiddenInput = roleSelector.querySelector("#user-role-input-register, #user-role-input");
-        const options = roleSelector.querySelectorAll(".role-option-register, .role-option");
+  allSelectors.forEach((roleSelector) => {
+    const selectedText = roleSelector.querySelector(
+      "#selected-role-text-register, #selected-role-text",
+    );
+    const hiddenInput = roleSelector.querySelector(
+      "#user-role-input-register, #user-role-input",
+    );
+    const options = roleSelector.querySelectorAll(
+      ".role-option-register, .role-option",
+    );
 
-        // 1. Abrir/cerrar menú
-        roleSelector.addEventListener("click", function(e) {
-            if (e.target.closest(".role-option-register, .role-option")) return;
-            this.classList.toggle("open");
-        });
-
-        // 2. Seleccionar opción
-        options.forEach(option => {
-            option.addEventListener("click", function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const selectedRoleName = this.textContent.trim();
-                const selectedRoleValue = this.getAttribute("data-role-register") || this.getAttribute("data-role");
-
-                selectedText.textContent = selectedRoleName;
-                hiddenInput.value = selectedRoleValue;
-                
-                roleSelector.classList.add("selected");
-                roleSelector.classList.remove("open");
-            });
-        });
+    // 1. Abrir/cerrar menú
+    roleSelector.addEventListener("click", function (e) {
+      if (e.target.closest(".role-option-register, .role-option")) return;
+      this.classList.toggle("open");
     });
 
-    // 3. Cerrar al clic fuera
-    document.addEventListener("click", function(e) {
-        const allSelectors = document.querySelectorAll(".role-selector-container, .role-selector-container-register");
-        allSelectors.forEach(selector => {
-            if (!selector.contains(e.target)) {
-                selector.classList.remove("open");
-            }
-        });
-    });
+    // 2. Seleccionar opción
+    options.forEach((option) => {
+      option.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-    
+        const selectedRoleName = this.textContent.trim();
+        const selectedRoleValue =
+          this.getAttribute("data-role-register") ||
+          this.getAttribute("data-role");
+
+        selectedText.textContent = selectedRoleName;
+        hiddenInput.value = selectedRoleValue;
+
+        roleSelector.classList.add("selected");
+        roleSelector.classList.remove("open");
+      });
+    });
+  });
+
+  // 3. Cerrar al clic fuera
+  document.addEventListener("click", function (e) {
+    const allSelectors = document.querySelectorAll(
+      ".role-selector-container, .role-selector-container-register",
+    );
+    allSelectors.forEach((selector) => {
+      if (!selector.contains(e.target)) {
+        selector.classList.remove("open");
+      }
+    });
+  });
 });

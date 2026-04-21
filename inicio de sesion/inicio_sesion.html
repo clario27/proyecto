@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="inicio.css">
     <link rel="stylesheet" href="script.js">
-
     <title>La Salle</title>
 </head>
 
@@ -71,20 +70,14 @@
                     <input type="text" required placeholder="Nombre y apellido">
                 </div>
                 <div class="container-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" required placeholder="Correo Electronico">
+                </div>
+                <div class="container-input">
                     <ion-icon name="card-outline"></ion-icon>
                     <input type="text" required placeholder="Cedula">
                 </div>
 
-                <div class="container-input">
-                    <ion-icon name="call-outline"></ion-icon>
-                    <input type="text" required placeholder="Telefono">
-                </div>
-
-                <div class="container-input">
-                    <ion-icon name="mail-outline"></ion-icon>
-                    <input type="text" required placeholder="Correo Electronico">
-                </div>
-                <!-- Selector principal -->
                 <div class="container-input role-selector-container">
                     <div class="role-selector-btn">
                         <div class="role-info">
@@ -100,7 +93,6 @@
                     <input type="hidden" name="user_role" id="user-role-input" value="">
                 </div>
 
-                <!-- Selector especialidades (OCULTO inicialmente) -->
                 <div class="container-input role-selector-container-specialties" style="display: none;">
                     <div class="role-selector-btn">
                         <div class="role-info">
